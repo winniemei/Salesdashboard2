@@ -17,6 +17,22 @@ import Link from '@mui/material/Link';
 import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import NotificationsIcon from '@mui/icons-material/Notifications';
+
+import {mockTransactions} from "../mockData";
+
+const bubblesArray = ['bubbles', 'john doe', 'sooodfoasf', 'pop'];
+console.log({mockTransactions});
+
+const transactionsArray = {mockTransactions};
+// console.log(transactionsArray)
+// for (let i = 0; i < transactionsArray.length; i++) {
+//     console.log(i["user"]);
+// }
+
+// const newTransactions = transactionsArray.map((ele) => {ele})
+// console.log(newTransactions);
+
+
 // import { mainListItems, secondaryListItems } from './listItems';
 // import Chart from './Chart';
 // import Deposits from './Deposits';
@@ -89,6 +105,9 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
 const defaultTheme = createTheme();
 
 export default function Dashboard() {
+
+
+
   const [open, setOpen] = React.useState(true);
   const toggleDrawer = () => {
     setOpen(!open);
@@ -148,6 +167,7 @@ export default function Dashboard() {
           <Divider />
           <List component="nav">
             {/* {mainListItems} */}
+            {/* {mockTransactions} */}
             <Divider sx={{ my: 1 }} />
             {/* {secondaryListItems} */}
           </List>
@@ -168,7 +188,11 @@ export default function Dashboard() {
           <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
             <Grid container spacing={3}>
               {/* Chart */}
-              <Grid item xs={12} md={8} lg={9}>
+              <Grid item xs={120} md={8} lg={9}>
+                <div>Sales</div>
+                {/* <div>{transactionsArray[2]["user"]}</div> */}
+
+                {console.log(transactionsArray)}
                 <Paper
                   sx={{
                     p: 2,
@@ -180,8 +204,9 @@ export default function Dashboard() {
                   {/* <Chart /> */}
                 </Paper>
               </Grid>
+              <div>Transactions</div>
               {/* Recent Deposits */}
-              <Grid item xs={12} md={4} lg={3}>
+              <Grid item xs={50} md={4} lg={3}>
                 <Paper
                   sx={{
                     p: 2,
