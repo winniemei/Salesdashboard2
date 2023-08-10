@@ -6,7 +6,7 @@ import * as React from 'react';
 import { red } from '@mui/material/colors';
 import Dashboard from './components/Dashboard';
 import Sidebar from './components/Dashboard';
-import Heading from './components/Heading';
+// import Heading from './components/Heading';
 
 function App() {
 
@@ -16,7 +16,6 @@ function App() {
       {/* <MockTransactions /> */}
       <Dashboard />
       <Sidebar />
-      <Heading />
 
     </>
   )

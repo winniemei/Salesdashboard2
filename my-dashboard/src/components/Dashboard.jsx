@@ -23,7 +23,12 @@ import {mockTransactions} from "../mockData";
 const bubblesArray = ['bubbles', 'john doe', 'sooodfoasf', 'pop'];
 console.log({mockTransactions});
 
-const transactionsArray = {mockTransactions};
+// const transactionsArray = {mockTransactions};
+
+// const mapArray = mockTransactions.map((ele) => ele.user)
+
+
+
 // console.log(transactionsArray)
 // for (let i = 0; i < transactionsArray.length; i++) {
 //     console.log(i["user"]);
@@ -189,34 +194,29 @@ export default function Dashboard() {
             <Grid container spacing={3}>
               {/* Chart */}
               <Grid item xs={120} md={8} lg={9}>
-                <div>Sales</div>
-                {/* <div>{transactionsArray[2]["user"]}</div> */}
-
-                {console.log(transactionsArray)}
+                
+                {/* {console.log(transactionsArray)} */}
                 <Paper
-                  sx={{
-                    p: 2,
-                    display: 'flex',
-                    flexDirection: 'column',
-                    height: 240,
-                  }}
+                
+                  
                 >
+                    <div>Sales</div>
+                {/* <div>{transactionsArray[2]["user"]}</div> */}
+                <>{mockTransactions.map((ele) => {
+                    return (
+                    <ul>
+                    <li>{ele.user}</li>
+                    <li>{ele.txId},</li> 
+                    <li>{ele.date}</li> 
+                    <li>{ele.cost}</li>
+                    </ul>)
+                })}</>
                   {/* <Chart /> */}
                 </Paper>
               </Grid>
-              <div>Transactions</div>
+              <div></div>
               {/* Recent Deposits */}
               <Grid item xs={50} md={4} lg={3}>
-                <Paper
-                  sx={{
-                    p: 2,
-                    display: 'flex',
-                    flexDirection: 'column',
-                    height: 240,
-                  }}
-                >
-                  {/* <Deposits /> */}
-                </Paper>
               </Grid>
               {/* Recent Orders */}
               <Grid item xs={12}>
