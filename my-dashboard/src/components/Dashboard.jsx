@@ -200,8 +200,7 @@ export default function Dashboard() {
                 
                   
                 >
-                    <div>Sales</div>
-                {/* <div>{transactionsArray[2]["user"]}</div> */}
+                    <div>Transactions</div>
                 <>{mockTransactions.map((ele) => {
                     return (
                     <ul>
