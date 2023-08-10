@@ -17,6 +17,7 @@ import Link from '@mui/material/Link';
 import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import NotificationsIcon from '@mui/icons-material/Notifications';
+import { useState } from 'react';
 
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -117,6 +118,14 @@ const defaultTheme = createTheme();
 
 export default function Dashboard() {
 
+    async function handleClick() {
+        try {
+            alert("I REALLY LOVE FOOD");
+        }
+        catch(error) {
+            console.error(error);
+        }
+    }
 
 
   const [open, setOpen] = React.useState(true);
@@ -128,20 +137,20 @@ export default function Dashboard() {
     <ThemeProvider theme={defaultTheme}>
       <Box sx={{ display: 'flex' }}>
         <CssBaseline />
-        {/* <AppBar position="absolute" open={open}> */}
           <Toolbar
             // sx={{
             //   pr: '24px', // keep right padding when drawer closed
             // }}
           >
+           
             <IconButton
-              color="inherit"
-              aria-label="open drawer"
-              onClick={toggleDrawer}
-              sx={{
-                marginRight: '36px',
-                ...(open && { display: 'none' }),
-              }}
+            //   color="inherit"
+            //   aria-label="open drawer"
+            //   onClick={toggleDrawer}
+            //   sx={{
+            //     marginRight: '36px',
+            //     ...(open && { display: 'none' }),
+            //   }}
             >
               <MenuIcon />
             </IconButton>
@@ -210,7 +219,7 @@ export default function Dashboard() {
               <Grid item xs={12}>
                 <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
                   {/* <Orders /> */}
-                  <button>I LOVE FOOD</button>
+                  <button onClick={handleClick}>I LOVE FOOD</button>
                 </Paper>
               </Grid>
             </Grid>
