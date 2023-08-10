@@ -6,6 +6,8 @@ import * as React from 'react';
 import { red } from '@mui/material/colors';
 import Dashboard from './components/Dashboard';
 import Drawer from './components/Drawer';
+import SingleRowSelectionGrid from './components/Datagrid';
+import ScrollPlayground from './components/Scrollbar';
 // import Heading from './components/Heading';
 
 function App() {
@@ -16,6 +18,8 @@ function App() {
       {/* <MockTransactions /> */}
       <Dashboard />
       <Drawer />
+      {/* <SingleRowSelectionGrid /> */}
+      <ScrollPlayground />
 
     </>
   )

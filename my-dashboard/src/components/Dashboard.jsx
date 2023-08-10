@@ -18,7 +18,13 @@ import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 
+import Table from '@mui/material/Table';
+import TableBody from '@mui/material/TableBody';
+import TableCell from '@mui/material/TableCell';
+import TableHead from '@mui/material/TableHead';
+import TableRow from '@mui/material/TableRow';
 import {mockTransactions} from "../mockData";
+import ScrollPlayground from './Scrollbar';
 
 const bubblesArray = ['bubbles', 'john doe', 'sooodfoasf', 'pop'];
 console.log({mockTransactions});
@@ -157,7 +163,7 @@ export default function Dashboard() {
           </Toolbar>
         {/* </AppBar> */}
         <Drawer variant="permanent" open={open}>
-          <Toolbar
+          {/* <Toolbar
             sx={{
               display: 'flex',
               alignItems: 'center',
@@ -165,10 +171,9 @@ export default function Dashboard() {
               px: [1],
             }}
           >
-            <IconButton onClick={toggleDrawer}>
-              <ChevronLeftIcon />
-            </IconButton>
-          </Toolbar>
+
+
+          </Toolbar> */}
           <Divider />
           <List component="nav">
             {/* {mainListItems} */}
@@ -193,34 +198,35 @@ export default function Dashboard() {
           <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
             <Grid container spacing={3}>
               {/* Chart */}
-              <Grid item xs={120} md={8} lg={9}>
+              <Grid item xs={120} md={8} lg={9} id="scroll">
                 
                 {/* {console.log(transactionsArray)} */}
                 <Paper
                 
                   
                 >
-                    <div>Transactions</div>
-                <>{mockTransactions.map((ele) => {
+                    <div >Transactions</div>
+                <Table>{mockTransactions.map((ele) => {
                     return (
-                    <ul>
-                    <li>{ele.user}</li>
-                    <li>{ele.txId},</li> 
-                    <li>{ele.date}</li> 
-                    <li>{ele.cost}</li>
-                    </ul>)
-                })}</>
+                    <TableRow>
+                    <TableCell>{ele.user}</TableCell>
+                    <TableCell>{ele.txId}</TableCell> 
+                    <TableCell>{ele.date}</TableCell> 
+                    <TableCell>{ele.cost}</TableCell>
+                    </TableRow>)
+                })}</ Table >
                   {/* <Chart /> */}
                 </Paper>
               </Grid>
               <div></div>
               {/* Recent Deposits */}
-              <Grid item xs={50} md={4} lg={3}>
-              </Grid>
+              {/* <Grid item xs={50} md={4} lg={3}>
+              </Grid> */}
               {/* Recent Orders */}
               <Grid item xs={12}>
                 <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
                   {/* <Orders /> */}
+                  <button onClick={alert("HEYo")}>HELLO</button>
                 </Paper>
               </Grid>
             </Grid>

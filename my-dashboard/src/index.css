@@ -67,3 +67,8 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+#scroll {
+  max-height: 250px;
+  overflow-y:scroll;
+}
